@@ -70,6 +70,26 @@ log.info("hogehoge")
 #=> Nothing is pritted out
 ```
 
+### Change format
+
+Specify format in string. The default format is `'%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'`.
+
+```python
+from pylogger import Logger
+
+log_before = Logger(__name__).build()
+log_after = Logger(__name__ + "after").set_format('%(levelname)s %(message)s').build()
+
+log_before.info("before")
+log_after.info("after")
+```
+
+Here is the output.
+
+```shell
+INFO 2018-11-26 23:11:15,109 test.py:main in line 4: before
+INFO after
+```
 
 ## Member
 
