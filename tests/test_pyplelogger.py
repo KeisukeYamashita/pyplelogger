@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
+
+"""
+:copyright: © 2018 by KeisukeYamashita.
+:license: MIT, see LICENSE for more details.
+"""
+
 import logging
 from unittest import TestCase
-from pylogger.pylogger import Logger, IncrementalLoggerLevel
+from . import Logger, IncrementalLoggerLevel
 from logging import Formatter
 
 class TestLogger(TestCase):

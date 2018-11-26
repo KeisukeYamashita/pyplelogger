@@ -4,6 +4,9 @@
 This module implements `Logger` class for logging in other modules.
 It uses builder pattern for implementing instance configuration.
 
+:copyright: © 2018 by KeisukeYamashita.
+:license: MIT, see LICENSE for more details.
+
 Note:
     The default log level is `WARNING`.
     Which means that `INFO` or `DEBUG` level will not show unless `DEFAULT_LOG_LEVEL`
