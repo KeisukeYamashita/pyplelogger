@@ -2,6 +2,7 @@
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![Build Status](https://travis-ci.com/KeisukeYamashita/pylogger.svg?branch=master)](https://travis-ci.com/KeisukeYamashita/pylogger)
+[![pylogger 1.0.0](https://img.shields.io/badge/python-1.0.0-blue.svg)](https://www.python.org/downloads/release/python-330/)
 [![Python 3.3](https://img.shields.io/badge/python->3.3-blue.svg)](https://www.python.org/downloads/release/python-330/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -82,7 +83,7 @@ log.info("hogehoge")
 #=> Nothing is pritted out
 ```
 
-### Change logger level
+### Change logger level
 
 This is similier to changing default log level but this method changes log level for one logger.
 
@@ -118,6 +119,59 @@ Here is the output.
 INFO 2018-11-26 23:11:15,109 test.py:main in line 4: before
 INFO after
 ``` 
+
+## With Argparse
+
+This has good integration with [argparse](https://docs.python.jp/3/library/argparse.html), a library for creating cli tool.
+
+### Verbose flag
+
+This is just a simple example of the verbose flag.
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--verbose', '-v', action='count')
+
+args = parser.parse_args()
+```
+
+Now you can get number of `v` flags like 
+
+- `-v`: 1
+- `-vvv`: 3
+
+You can convert to log level by Using `IncrementalLoggerLevel` IntEnum Class.
+
+```python
+# 1 is debug level
+
+count = 1
+
+log_level = IncrementalLoggerLevel.convert_logger_level(1)
+
+log = Logger().set_log_level(log_level)
+log.DEBUG("hoge")
+```
+
+Then you will see
+
+```
+#=> 
+DEBUG 2018-11-26 23:11:15,109 test.py:main in line 3: hoge
+```
+
+The default level of logging is `INFO` in current version.
+
+| level | number | count |
+|:----|:----|:---|
+| CRITICAL | 50 | - |
+| ERROR | 40 | - |
+| WARNING | 30 | - |
+| INFO | 20 | 0 |
+| DEBUG | 10 | 1 | 
+| NOTSET | 0 | 2 |
 
 ## Member
 
