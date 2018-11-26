@@ -2,7 +2,7 @@
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![Build Status](https://travis-ci.com/KeisukeYamashita/pylogger.svg?branch=master)](https://travis-ci.com/KeisukeYamashita/pylogger)
-[![pylogger 1.0.0](https://img.shields.io/badge/python-1.0.0-blue.svg)](https://www.python.org/downloads/release/python-330/)
+[![pylogger 1.0.0](https://img.shields.io/badge/pylogger-1.0.0-blue.svg)](https://www.python.org/downloads/release/python-330/)
 [![Python 3.3](https://img.shields.io/badge/python->3.3-blue.svg)](https://www.python.org/downloads/release/python-330/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -172,6 +172,13 @@ The default level of logging is `INFO` in current version.
 | INFO | 20 | 0 |
 | DEBUG | 10 | 1 | 
 | NOTSET | 0 | 2 |
+
+## To contribute
+
+We welcome for your contribution.
+
+1. Fork this project
+2. Give us a pull request
 
 ## Member
 
