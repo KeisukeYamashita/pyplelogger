@@ -14,6 +14,7 @@ pip install pylogger
 ```
 
 ## Usage
+
 ### Simple usage
 
 This is the atomic usage. Import this and print it out.
@@ -47,6 +48,16 @@ log.info("hogehoge")
 
 And once you set teh default log level, it is valid in entire project.
 
+The logger levels are defined in `logging` library.
+
+| level | number |
+|:----|:----|
+| CRITICAL | 50 |
+| ERROR | 40 |
+| WARNING | 30 |
+| INFO | 20 |
+| DEBUG | 10 |
+| NOTSET | 0 |
 
 Let's say you have a `script1.py` and `script2.py`.
 
@@ -71,6 +82,22 @@ log.info("hogehoge")
 #=> Nothing is pritted out
 ```
 
+### Change logger level
+
+This is similier to changing default log level but this method changes log level for one logger.
+
+Futhermore, the method to change default log level is a class method but, this method is a instance method, so it will only effect the instance.
+
+```python
+import logging
+from pylogger import Logger
+
+log = Logger(__name__).set_log_level(logging.WARNING).build()
+log.info("hogehoge")
+
+#=> Nothing is pritted out
+```
+
 ### Change format
 
 Specify format in string. The default format is `'%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'`.
@@ -90,7 +117,7 @@ Here is the output.
 ```shell
 INFO 2018-11-26 23:11:15,109 test.py:main in line 4: before
 INFO after
-```
+``` 
 
 ## Member
 
