@@ -6,6 +6,9 @@
 [![Python 3.3](https://img.shields.io/badge/python->3.3-blue.svg)](https://www.python.org/downloads/release/python-330/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a489ad892561ae5ece20/maintainability)](https://codeclimate.com/github/KeisukeYamashita/pylogger/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a489ad892561ae5ece20/test_coverage)](https://codeclimate.com/github/KeisukeYamashita/pylogger/test_coverage)
+
 > Simple logger written in python mostly for command line interface tools.  
 
 ## Install
