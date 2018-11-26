@@ -1,12 +1,11 @@
-# 
+# pyplelogger
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![Build Status](https://travis-ci.com/KeisukeYamashita/pylogger.svg?branch=master)](https://travis-ci.com/KeisukeYamashita/pylogger)
-[![pylogger 1.0.0](https://img.shields.io/badge/pylogger-1.0.0-blue.svg)](https://www.python.org/downloads/release/python-330/)
 [![Python 3.3](https://img.shields.io/badge/python->3.3-blue.svg)](https://www.python.org/downloads/release/python-330/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a489ad892561ae5ece20/maintainability)](https://codeclimate.com/github/KeisukeYamashita/pylogger/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a489ad892561ae5ece20/maintainability)](https://codeclimate.com/github/KeisukeYamashita/pyplelogger/maintainability)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 > Simple logger written in python mostly for command line interface tools.  
@@ -25,7 +24,7 @@ pip install pyplelogger
 This is the atomic usage. Import this and print it out.
 
 ```python
-from pylogger import Logger
+from pyplelogger import Logger
 
 log = Logger(__name__).build()
 log.info("hogehoge")
@@ -41,7 +40,7 @@ You can change logger level entire the project.
 
 ```python
 import logging
-from pylogger import Logger
+from pyplelogger import Logger
 
 Logger.set_default_log_level(logging.WARNING)
 
@@ -70,7 +69,7 @@ If you change defaul log level in `script1.py` like this,
 
 ```python
 import logging
-from pylogger import Logger
+from pyplelogger import Logger
 
 Logger.set_default_log_level(logging.WARNING)
 ```
@@ -79,7 +78,7 @@ it is valid in `script2.py` too.
 
 ```python
 import logging
-from pylogger import Logger
+from pyplelogger import Logger
 
 log = Logger(__name__).build()
 log.info("hogehoge")
@@ -95,7 +94,7 @@ Futhermore, the method to change default log level is a class method but, this m
 
 ```python
 import logging
-from pylogger import Logger
+from pyplelogger import Logger
 
 log = Logger(__name__).set_log_level(logging.WARNING).build()
 log.info("hogehoge")
@@ -108,7 +107,7 @@ log.info("hogehoge")
 Specify format in string. The default format is `'%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'`.
 
 ```python
-from pylogger import Logger
+from pyplelogger import Logger
 
 log_before = Logger(__name__).build()
 log_after = Logger(__name__ + "after").set_format('%(levelname)s %(message)s').build()

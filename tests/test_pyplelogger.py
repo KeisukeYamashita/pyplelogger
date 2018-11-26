@@ -7,7 +7,7 @@
 
 import logging
 from unittest import TestCase
-from . import Logger, IncrementalLoggerLevel
+from pyplelogger.pyplelogger import Logger, IncrementalLoggerLevel
 from logging import Formatter
 
 class TestLogger(TestCase):
