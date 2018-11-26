@@ -181,7 +181,8 @@ The default level of logging is `INFO` in current version.
 We welcome for your contribution.
 
 1. Fork this project
-2. Give us a pull request
+2. Run `just` to install dependencies.
+3. Give us a pull request
 
 ## Member
 
