@@ -102,6 +102,24 @@ log.info("hogehoge")
 #=> Nothing is pritted out
 ```
 
+### Change default format
+
+You can change default format of every instance of Logger by this method. Pass string object describing logging format.
+
+```python
+format = '%(levelname)s %(asctime)s %(message)s'
+Logger.set_default_format(format)
+
+log = Logger(__name__).build()
+log.info("hogehoge")
+```
+
+This will print out this logs.
+
+```shell
+INFO 2018-11-28 18:11:15,109 hogehoge
+```
+
 ### Change format
 
 Specify format in string. The default format is `'%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'`.
