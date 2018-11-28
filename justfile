@@ -1,5 +1,6 @@
 setup_file = "setup.py"
 
+# install dependencies
 install:
     pip install -r requirements.txt
 

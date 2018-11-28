@@ -74,7 +74,7 @@ class Logger(object):
         self.__logger = None
         self.__logger_name = name
         self.__log_level = self.DEFAULT_LOG_LEVEL
-        self.__format = Formatter(self.DEFAULT_FORMAT)
+        self.__format = self.DEFAULT_FORMAT
         self.__handlers = [{
           'handler': StreamHandler(),
           'level': self.DEFAULT_LOG_LEVEL  
@@ -188,7 +188,7 @@ class Logger(object):
 
         for h in self.__handlers:
             h['handler'].setLevel(h['level'])
-            h['handler'].setFormatter(self.__format)
+            h['handler'].setFormatter(Formatter(self.__format))
             log.addHandler(h['handler'])
 
         return log

@@ -24,14 +24,15 @@ class TestLogger(TestCase):
 
     def test_default_format(self):
         default_format = self.log.DEFAULT_FORMAT
+
         format = '%(levelname)s %(asctime)s %(message)s'
         Logger.set_default_format(format)
+        logger = Logger("default_format")
 
-        log = Logger("default_format").build()
+        self.assertEqual(logger.DEFAULT_FORMAT, format, "format should be changed")
+        self.assertNotEqual(default_format, format, "format should be changed")
 
         self.log.set_default_format(default_format)
-        
-
 
     def test_init(self):
         self.assertIsInstance(self.log, Logger, "init should return Logger object")

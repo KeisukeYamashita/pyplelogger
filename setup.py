@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pyplelogger',
-    version='0.1.4',
+    version='0.1.5',
     description='Simple logger in python mainly used for CLI tool like argparse',
     author='KeisukeYamashita',
     author_email='19yamashita15@gmail.com',
