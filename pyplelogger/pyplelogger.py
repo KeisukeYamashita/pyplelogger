@@ -43,6 +43,8 @@ class Logger(object):
     DEFAULT_LOG_LEVEL = logging.INFO
     """int: default log level of the logger"""
 
+    DEFAULT_FORMAT = '%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'
+
     @classmethod
     def set_default_log_level(cls, level):
         """Class function to set default log level
@@ -54,6 +56,16 @@ class Logger(object):
         """
 
         cls.DEFAULT_LOG_LEVEL = level
+    
+    @classmethod
+    def set_default_format(cls, format_str):
+        """Class function to set default log format
+
+        Args:
+            format_str(str): string object describing format
+        """
+
+        cls.DEFAULT_FORMAT = Formatter(format_str)
 
     def __init__(self, name):
         """Fucntion of initializer `__init__`"""
@@ -61,7 +73,7 @@ class Logger(object):
         self.__logger = None
         self.__logger_name = name
         self.__log_level = self.DEFAULT_LOG_LEVEL
-        self.__format = Formatter('%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s')
+        self.__format = Formatter(self.DEFAULT_FORMAT)
         self.__handlers = [{
           'handler': StreamHandler(),
           'level': self.DEFAULT_LOG_LEVEL  
