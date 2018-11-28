@@ -65,7 +65,8 @@ class Logger(object):
             format_str(str): string object describing format
         """
 
-        cls.DEFAULT_FORMAT = Formatter(format_str)
+        cls.DEFAULT_FORMAT = format_str
+        
 
     def __init__(self, name):
         """Fucntion of initializer `__init__`"""

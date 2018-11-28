@@ -22,6 +22,17 @@ class TestLogger(TestCase):
         self.assertEqual(self.log.DEFAULT_LOG_LEVEL, new_logger.DEFAULT_LOG_LEVEL)
         self.log.set_default_log_level(logging.INFO)
 
+    def test_default_format(self):
+        default_format = self.log.DEFAULT_FORMAT
+        format = '%(levelname)s %(asctime)s %(message)s'
+        Logger.set_default_format(format)
+
+        log = Logger("default_format").build()
+
+        self.log.set_default_format(default_format)
+        
+
+
     def test_init(self):
         self.assertIsInstance(self.log, Logger, "init should return Logger object")
         self.assertEqual(self.log.get_logger_name(), "setUp")
