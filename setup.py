@@ -1,8 +1,10 @@
 from setuptools import setup
 
+_VERSION='0.1.6'
+
 setup(
     name='pyplelogger',
-    version='0.1.5',
+    version=_VERSION,
     description='Simple logger in python mainly used for CLI tool like argparse',
     author='KeisukeYamashita',
     author_email='19yamashita15@gmail.com',

@@ -43,7 +43,7 @@ class Logger(object):
     DEFAULT_LOG_LEVEL = logging.INFO
     """int: default log level of the logger"""
 
-    DEFAULT_FORMAT = '%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'
+    DEFAULT_FORMAT = '%(asctime)s %(levelname)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'
 
     @classmethod
     def set_default_log_level(cls, level):
