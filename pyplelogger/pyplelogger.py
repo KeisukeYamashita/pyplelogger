@@ -8,9 +8,9 @@ It uses builder pattern for implementing instance configuration.
 :license: MIT, see LICENSE for more details.
 
 Note:
-    The defualt log level is `WARNING`.
-    Which means that `INFO` or `DEBUG` level will not show unless `defualt_LOG_LEVEL`
-    is changed by class method `set_defualt_log_level`.
+    The default log level is `WARNING`.
+    Which means that `INFO` or `DEBUG` level will not show unless `default_LOG_LEVEL`
+    is changed by class method `set_default_log_level`.
 
 Example:
     From another module import and just build for usage.    
@@ -40,32 +40,32 @@ from logging import StreamHandler, Formatter
 
 
 class Logger(object):
-    defualt_LOG_LEVEL = logging.INFO
-    """int: defualt log level of the logger"""
+    default_LOG_LEVEL = logging.INFO
+    """int: default log level of the logger"""
 
-    defualt_FORMAT = '%(asctime)s %(levelname)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'
+    default_FORMAT = '%(asctime)s %(levelname)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'
 
     @classmethod
-    def set_defualt_log_level(cls, level):
-        """Class function to set defualt log level
+    def set_default_log_level(cls, level):
+        """Class function to set default log level
 
-        since `defualt_LOG_LEVEL` is a class property, is will change all log level is you change
+        since `default_LOG_LEVEL` is a class property, is will change all log level is you change
 
         Args:
-            level (str): level of the logger for defualt. All instances will change.
+            level (str): level of the logger for default. All instances will change.
         """
 
-        cls.defualt_LOG_LEVEL = level
+        cls.default_LOG_LEVEL = level
     
     @classmethod
-    def set_defualt_format(cls, format_str):
-        """Class function to set defualt log format
+    def set_default_format(cls, format_str):
+        """Class function to set default log format
 
         Args:
             format_str(str): string object describing format
         """
 
-        cls.defualt_FORMAT = format_str
+        cls.default_FORMAT = format_str
         
 
     def __init__(self, name):
@@ -73,11 +73,11 @@ class Logger(object):
 
         self.__logger = None
         self.__logger_name = name
-        self.__log_level = self.defualt_LOG_LEVEL
-        self.__format = self.defualt_FORMAT
+        self.__log_level = self.default_LOG_LEVEL
+        self.__format = self.default_FORMAT
         self.__handlers = [{
           'handler': StreamHandler(),
-          'level': self.defualt_LOG_LEVEL  
+          'level': self.default_LOG_LEVEL  
         }]
     
     def get_logger_name(self):
