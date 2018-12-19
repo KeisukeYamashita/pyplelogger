@@ -32,9 +32,9 @@ log.info("hogehoge")
 INFO 2018-11-26 23:11:15,109 test.py:main in line 4: hogehoge
 ```
 
-The default log level is `INFO` and you have to pass unique name for each handler. 
+The defualt log level is `INFO` and you have to pass unique name for each handler. 
 
-### Change default logger level
+### Change defualt logger level
 
 You can change logger level entire the project.
 
@@ -42,7 +42,7 @@ You can change logger level entire the project.
 import logging
 from pyplelogger import Logger
 
-Logger.set_default_log_level(logging.WARNING)
+Logger.set_defualt_log_level(logging.WARNING)
 
 log = Logger(__name__).build()
 log.info("hogehoge")
@@ -50,7 +50,7 @@ log.info("hogehoge")
 #=> Nothing is pritted out
 ```
 
-And once you set teh default log level, it is valid in entire project.
+And once you set teh defualt log level, it is valid in entire project.
 
 The logger levels are defined in `logging` library.
 
@@ -71,7 +71,7 @@ If you change defaul log level in `script1.py` like this,
 import logging
 from pyplelogger import Logger
 
-Logger.set_default_log_level(logging.WARNING)
+Logger.set_defualt_log_level(logging.WARNING)
 ```
 
 it is valid in `script2.py` too.
@@ -88,9 +88,9 @@ log.info("hogehoge")
 
 ### Change logger level
 
-This is similier to changing default log level but this method changes log level for one logger.
+This is similier to changing defualt log level but this method changes log level for one logger.
 
-Futhermore, the method to change default log level is a class method but, this method is a instance method, so it will only effect the instance.
+Futhermore, the method to change defualt log level is a class method but, this method is a instance method, so it will only effect the instance.
 
 ```python
 import logging
@@ -102,13 +102,13 @@ log.info("hogehoge")
 #=> Nothing is pritted out
 ```
 
-### Change default format
+### Change defualt format
 
-You can change default format of every instance of Logger by this method. Pass string object describing logging format.
+You can change defualt format of every instance of Logger by this method. Pass string object describing logging format.
 
 ```python
 format = '%(levelname)s %(asctime)s %(message)s'
-Logger.set_default_format(format)
+Logger.set_defualt_format(format)
 
 log = Logger(__name__).build()
 log.info("hogehoge")
@@ -122,7 +122,7 @@ INFO 2018-11-28 18:11:15,109 hogehoge
 
 ### Change format
 
-Specify format in string. The default format is `'%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'`.
+Specify format in string. The defualt format is `'%(levelname)s %(asctime)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'`.
 
 ```python
 from pyplelogger import Logger
@@ -183,7 +183,7 @@ Then you will see
 DEBUG 2018-11-26 23:11:15,109 test.py:main in line 3: hoge
 ```
 
-The default level of logging is `INFO` in current version.
+The defualt level of logging is `INFO` in current version.
 
 | level | number | count |
 |:----|:----|:---|
@@ -194,7 +194,7 @@ The default level of logging is `INFO` in current version.
 | DEBUG | 10 | 1 | 
 | NOTSET | 0 | 2 |
 
-The default is now `INFO` but we are planning to change that in our next release.
+The defualt is now `INFO` but we are planning to change that in our next release.
 
 ## To contribute
 
