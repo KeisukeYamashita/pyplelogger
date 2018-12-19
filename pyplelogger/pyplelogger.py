@@ -243,17 +243,17 @@ class IncrementalLoggerLevel(IntEnum):
             logging_level (int): logging level from logging package
         """
 
-        logger_coutn = self(count)
+        logger_count = self(count)
 
-        if logger_coutn == self.CRITICAL:
+        if logger_count == self.CRITICAL:
             return logging.CRITICAL
-        elif logger_coutn == self.ERROR:
+        elif logger_count == self.ERROR:
             return logging.ERROR
-        elif logger_coutn == self.WARNING:
+        elif logger_count == self.WARNING:
             return logging.WARNING
-        elif logger_coutn == self.INFO:
+        elif logger_count == self.INFO:
             return logging.INFO
-        elif logger_coutn == self.DEBUG:
+        elif logger_count == self.DEBUG:
             return logging.DEBUG
         else:
             return logging.NOTSET
