@@ -18,18 +18,18 @@ class TestLogger(TestCase):
     def test_default_log_level(self):
         self.log.set_default_log_level(logging.DEBUG)
         new_logger = Logger("default_log_level")
-        self.assertEqual(new_logger.DEFAULT_LOG_LEVEL, logging.DEBUG)
-        self.assertEqual(self.log.DEFAULT_LOG_LEVEL, new_logger.DEFAULT_LOG_LEVEL)
+        self.assertEqual(new_logger.default_LOG_LEVEL, logging.DEBUG)
+        self.assertEqual(self.log.default_LOG_LEVEL, new_logger.default_LOG_LEVEL)
         self.log.set_default_log_level(logging.INFO)
 
     def test_default_format(self):
-        default_format = self.log.DEFAULT_FORMAT
+        default_format = self.log.default_FORMAT
 
         format = '%(levelname)s %(asctime)s %(message)s'
         Logger.set_default_format(format)
         logger = Logger("default_format")
 
-        self.assertEqual(logger.DEFAULT_FORMAT, format, "format should be changed")
+        self.assertEqual(logger.default_FORMAT, format, "format should be changed")
         self.assertNotEqual(default_format, format, "format should be changed")
 
         self.log.set_default_format(default_format)

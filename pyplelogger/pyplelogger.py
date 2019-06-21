@@ -9,7 +9,7 @@ It uses builder pattern for implementing instance configuration.
 
 Note:
     The default log level is `WARNING`.
-    Which means that `INFO` or `DEBUG` level will not show unless `DEFAULT_LOG_LEVEL`
+    Which means that `INFO` or `DEBUG` level will not show unless `default_LOG_LEVEL`
     is changed by class method `set_default_log_level`.
 
 Example:
@@ -40,22 +40,22 @@ from logging import StreamHandler, Formatter
 
 
 class Logger(object):
-    DEFAULT_LOG_LEVEL = logging.INFO
+    default_LOG_LEVEL = logging.INFO
     """int: default log level of the logger"""
 
-    DEFAULT_FORMAT = '%(asctime)s %(levelname)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'
+    default_FORMAT = '%(asctime)s %(levelname)s %(module)s.py:%(funcName)s in line %(lineno)d: %(message)s'
 
     @classmethod
     def set_default_log_level(cls, level):
         """Class function to set default log level
 
-        since `DEFAULT_LOG_LEVEL` is a class property, is will change all log level is you change
+        since `default_LOG_LEVEL` is a class property, is will change all log level is you change
 
         Args:
             level (str): level of the logger for default. All instances will change.
         """
 
-        cls.DEFAULT_LOG_LEVEL = level
+        cls.default_LOG_LEVEL = level
     
     @classmethod
     def set_default_format(cls, format_str):
@@ -65,7 +65,7 @@ class Logger(object):
             format_str(str): string object describing format
         """
 
-        cls.DEFAULT_FORMAT = format_str
+        cls.default_FORMAT = format_str
         
 
     def __init__(self, name):
@@ -73,11 +73,11 @@ class Logger(object):
 
         self.__logger = None
         self.__logger_name = name
-        self.__log_level = self.DEFAULT_LOG_LEVEL
-        self.__format = self.DEFAULT_FORMAT
+        self.__log_level = self.default_LOG_LEVEL
+        self.__format = self.default_FORMAT
         self.__handlers = [{
           'handler': StreamHandler(),
-          'level': self.DEFAULT_LOG_LEVEL  
+          'level': self.default_LOG_LEVEL  
         }]
     
     def get_logger_name(self):

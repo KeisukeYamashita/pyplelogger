@@ -194,6 +194,8 @@ The default level of logging is `INFO` in current version.
 | DEBUG | 10 | 1 | 
 | NOTSET | 0 | 2 |
 
+The default is now `INFO` but we are planning to change that in our next release.
+
 ## To contribute
 
 We welcome for your contribution.
